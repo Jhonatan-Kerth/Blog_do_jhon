@@ -1,0 +1,245 @@
+/*
+ * Carrega a fonte "Roboto" do Google Fonts:
+ *    Referências:
+ *        https://fonts.google.com/specimen/Roboto
+ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*
+ * Carrega a biblioteca Normalize que força a padronização dos estilos entre os
+ * navegadores:
+ *    Referências:
+ *        https://github.com/necolas/normalize.css
+ *        https://cdnjs.com/libraries/normalize
+ */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+/*
+ * Biblioteca de ícones:
+ *     Referências:
+ *        https://fontawesome.com/
+ *        https://cdnjs.com/libraries/font-awesome  
+ */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+
+/* Todos os elementos */
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Elementos da raiz e o #wrap */
+
+html,
+body,
+#wrap {
+    /* Sticky footer */
+    position: relative;
+    width: 99%;
+
+    padding: 0;
+    margin: 0;
+    height: 100%;
+
+}
+
+/* Fonte padrão */
+html,
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+}
+
+/* Fundo da página */
+body {
+    background-attachment: fixed;
+    background-color: rgb(0, 255, 119);
+    background-image: url("/img/background01.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Formata links */
+a {
+    text-decoration: none;
+    
+}
+
+a:hover {
+    color: rgb(0, 140, 255);
+}
+
+/* Limita o crescimento do conteúdo */
+#wrap {
+    max-width: 2024px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho → header */
+#wrap>header {
+    background: rgba(243, 5, 5, 0.158);
+    display: flex;
+    align-items: center;
+}
+
+/* Logotipo */
+#wrap>header img {
+    width: 95px;
+    display: block;
+    margin: 0.5rem;
+}
+
+/* Título */
+#wrap>header h1 {
+    font-size: 1.6rem;
+    margin: 10;
+    color: rgb(239, 241, 239);
+    text-align:center;
+}
+
+/* Slogan */
+#wrap>header small,
+#wrap>footer small {
+    display: block;
+    font-size: 60%;
+}
+
+#wrap>nav,
+#wrap>footer {
+    background-color: rgba(0, 0, 0, 0.377);
+    display: flex;
+    justify-content: flex-end;
+   
+    
+}
+
+#wrap>nav a {
+    color: rgb(255, 255, 255);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .2s;
+}
+
+#wrap>nav a:hover {
+    background: rgb(207, 135, 2);
+    color: rgb(0, 13, 69);
+}
+
+#wrap>nav a:first-child {
+    margin-right: auto;
+}
+
+#wrap>nav a i {
+    font-size: 2rem;
+}
+
+#wrap>nav a span {
+    padding-top: .5rem;
+}
+
+/* Rodapé */
+#wrap>footer {
+    justify-content: space-between;
+    align-items: center;
+}
+
+#wrap>footer i {
+    font-size: 1.5rem;
+}
+
+#wrap>footer a {
+    color: rgb(255, 255, 255);
+    padding: .25rem;
+}
+
+#wrap>footer a:hover {
+    background-color: rgb(207, 135, 2);
+    color: rgb(0, 13, 69);
+}
+
+#wrap>footer div a:hover {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+}
+
+#wrap>footer div {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 90%;
+}
+
+#wrap>footer div small {
+    font-size: 85%;
+}
+
+/* Conteúdo principal → main */
+#wrap>main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrap>main article,
+#wrap>main aside {
+    padding: 0 1rem 1rem 1rem;
+    background-color: rgba(255, 255, 255, 0.623);
+}
+
+#wrap>main article {
+    flex-grow: 1;
+}
+
+#wrap>main aside {
+    background-color: rgba(255, 255, 255, 0.623);
+    border-top: 3px dotted green;
+}
+
+/* Ajustes para telas maiores */
+
+/* Menu principal à partir de 475px */
+@media screen and (min-width: 475px) {
+
+    #wrap>nav {
+        justify-content: center;
+    }
+
+    #wrap>nav a {
+        padding: 0.5rem 1rem;
+        flex-direction: row;
+    }
+
+    #wrap>nav a:first-child {
+        margin: 0;
+    }
+
+    #wrap>nav a i {
+        font-size: 1.2rem;
+    }
+
+    #wrap>nav a span {
+        padding-top: 0;
+        padding-left: .3rem;
+    }
+
+}
+
+/* Conteúdo à partir de 640px */
+@media screen and (min-width: 640px) {
+
+    #wrap>main {
+        flex-direction: row;
+    }
+
+    #wrap>main aside {
+        border-top: none;
+        border-left: 3px dotted rgb(0, 0, 0);
+        min-width: 400px;
+        max-width: 200px;
+    }
+
+}
